@@ -18,10 +18,11 @@ export class EventComponent implements OnInit {
   endTime = {hour: this.today.getHours(), minute: this.today.getMinutes()};
   event: IEvent = {
     description: '',
-    endDate: '',
+    endDate: new Date(),
     name: '',
     startDate: new Date()
   };
+  loading = false;
 
   constructor(
     public dialogRef: MatDialogRef<EventComponent>,
@@ -53,14 +54,18 @@ export class EventComponent implements OnInit {
   }
 
   onSave() {
+    this.loading = true;
     this.event.startDate =
       new Date(moment(this.event.startDate).format('YYYY/MM/DD') + ' ' + this.startTime.hour + ':' + this.startTime.minute + ':00');
     this.event.endDate =
       new Date(moment(this.event.endDate).format('YYYY/MM/DD') + ' ' + this.endTime.hour + ':' + this.endTime.minute + ':00');
     console.log('event ', this.event);
     const vm = this;
-    vm.apiServ.createEvent(this.event).subscribe((res: any) => {
-      console.log('res .... ', res);
+    vm.apiServ.createEvent(this.event).subscribe((res: IEvent) => {
+      vm.loading = false;
+      vm.dialogRef.close(res);
+    }, (error) => {
+      vm.loading = false;
     });
   }
 

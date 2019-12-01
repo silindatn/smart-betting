@@ -16,6 +16,7 @@ export class EventsComponent implements OnInit {
 
   displayedColumns: string[] = ['id', 'name', 'description', 'startDate', 'endDate', 'menu'];
   dataSource = new MatTableDataSource<IEvent>([]);
+  loading = false;
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   @ViewChild(MatSort, {static: true}) sort: MatSort;
@@ -32,7 +33,13 @@ export class EventsComponent implements OnInit {
   }
 
   openDialog() {
-    this.dialog.open(EventComponent, {width: '500px'});
+    const vm = this;
+    const dialogRef = vm.dialog.open(EventComponent, {width: '500px'});
+    dialogRef.afterClosed().subscribe((event: IEvent) => {
+      if (event) {
+        vm.getEvents();
+      }
+    });
   }
 
   applyFilter(filterValue: string) {
@@ -41,8 +48,12 @@ export class EventsComponent implements OnInit {
 
   getEvents() {
     const vm = this;
+    vm.loading = true;
     vm.apiServ.getEvents().subscribe((events: IEvent[]) => {
+      vm.loading = false;
       vm.dataSource.data = events;
+    }, (error) => {
+      vm.loading = false;
     });
   }
 

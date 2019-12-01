@@ -13,6 +13,8 @@ import { IEvent } from 'src/app/shared/interfaces/event.interface';
 export class EventComponent implements OnInit {
   title = '';
   today = new Date();
+  startTime = {hour: this.today.getHours(), minute: this.today.getMinutes()};
+  endTime = {hour: this.today.getHours(), minute: this.today.getMinutes()};
   event: IEvent = {
     description: '',
     endDate: '',

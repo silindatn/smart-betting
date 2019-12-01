@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EventComponent } from './dialog/event/event.component';
 import { BetComponent } from './dialog/bet/bet.component';
@@ -21,6 +21,7 @@ import { MaterialModule } from '../shared/modules/material.module';
   imports: [
     CommonModule,
     MaterialModule
-  ]
+  ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class ComponentsModule { }

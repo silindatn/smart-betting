@@ -1,0 +1,23 @@
+-------------------- Auto-Git Log --------------------
+		Sun Dec 01 2019 19:39:37 GMT+0200 (South Africa Standard Time)
+------------------------------------------------------
+
+Modified files:
+* package-lock.json
+* package.json
+* src/app/components/dialog/event/event.component.html
+* src/app/components/dialog/event/event.component.scss
+* src/app/components/dialog/event/event.component.ts
+* src/app/layout/events/events.component.ts
+* src/app/shared/interfaces/event.interface.ts
+* src/app/shared/modules/material.module.ts
+
+
+Created files:
+* .autogit/logs/log-1-11-2019-19-9-31.txt
+
+
+Deleted files:
+
+
+Renamed files:

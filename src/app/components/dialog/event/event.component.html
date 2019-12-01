@@ -12,6 +12,9 @@
             <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
     <mat-form-field>
+        <ngb-timepicker [(ngModel)]="startTime"></ngb-timepicker>
+    </mat-form-field>
+    <mat-form-field>
         <input matInput [matDatepicker]="picker1" [matDatepickerFilter]="myFilter" placeholder="End Date" [(ngModel)]="event.endDate">
         <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
         <mat-datepicker #picker1></mat-datepicker>

@@ -6,19 +6,30 @@
     <mat-form-field class="example-form-field">
         <input matInput type="text" placeholder="Description" [(ngModel)]="event.description">
     </mat-form-field>
-    <mat-form-field>
-            <input matInput [matDatepicker]="picker" [matDatepickerFilter]="myFilterStart" placeholder="Start Date" [(ngModel)]="event.startDate">
-            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field>
-    <mat-form-field>
-        <ngb-timepicker [(ngModel)]="startTime"></ngb-timepicker>
-    </mat-form-field>
-    <mat-form-field>
-        <input matInput [matDatepicker]="picker1" [matDatepickerFilter]="myFilter" placeholder="End Date" [(ngModel)]="event.endDate">
-        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
-        <mat-datepicker #picker1></mat-datepicker>
-    </mat-form-field>            
+    <div class="row">
+        <div class="col-md-6">
+            <mat-form-field>
+                    <input matInput [matDatepicker]="picker" [matDatepickerFilter]="myFilterStart" placeholder="Start Date" [(ngModel)]="event.startDate">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </div>
+        <div class="col-md-6">
+            <ngb-timepicker [(ngModel)]="startTime"></ngb-timepicker>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-06">
+            <mat-form-field>
+                <input matInput [matDatepicker]="picker1" [matDatepickerFilter]="myFilter" placeholder="End Date" [(ngModel)]="event.endDate">
+                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>    
+        </div> 
+        <div class="col-md-6">
+            <ngb-timepicker [(ngModel)]="startTime"></ngb-timepicker>
+        </div>
+    </div>       
 </mat-dialog-content>
 <mat-dialog-actions>
   <button mat-raised-button [mat-dialog-close]="true">Cancel</button>

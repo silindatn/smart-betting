@@ -4,6 +4,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import * as moment from 'moment';
 
 import { IEvent } from 'src/app/shared/interfaces/event.interface';
+import { ApiService } from 'src/app/shared/services/api.service';
 
 @Component({
   selector: 'app-event',
@@ -19,12 +20,12 @@ export class EventComponent implements OnInit {
     description: '',
     endDate: '',
     name: '',
-    startDate: new Date(),
-    id: ''
+    startDate: new Date()
   };
 
   constructor(
     public dialogRef: MatDialogRef<EventComponent>,
+    private apiServ: ApiService,
     @Inject(MAT_DIALOG_DATA) public data: any) {
       if (this.data) {
         this.title = 'Edit Event';
@@ -46,6 +47,18 @@ export class EventComponent implements OnInit {
 
   onNoClick(): void {
     this.dialogRef.close();
+  }
+
+  onSave() {
+    this.event.startDate =
+      new Date(moment(this.event.startDate).format('YYYY/MM/DD') + ' ' + this.startTime.hour + ':' + this.startTime.minute + ':00');
+    this.event.endDate =
+      new Date(moment(this.event.endDate).format('YYYY/MM/DD') + ' ' + this.endTime.hour + ':' + this.endTime.minute + ':00');
+    console.log('event ', this.event);
+    const vm = this;
+    vm.apiServ.createEvent(this.event).subscribe((res: any) => {
+      console.log('res .... ', res);
+    });
   }
 
 }

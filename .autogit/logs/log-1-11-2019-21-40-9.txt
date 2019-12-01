@@ -1,0 +1,18 @@
+-------------------- Auto-Git Log --------------------
+		Sun Dec 01 2019 21:40:09 GMT+0200 (South Africa Standard Time)
+------------------------------------------------------
+
+Modified files:
+* src/app/components/dialog/event/event.component.ts
+* src/app/shared/services/api.service.ts
+* src/app/shared/services/http-helper.service.ts
+
+
+Created files:
+* .autogit/logs/log-1-11-2019-21-9-54.txt
+
+
+Deleted files:
+
+
+Renamed files:

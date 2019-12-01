@@ -1,0 +1,39 @@
+-------------------- Auto-Git Log --------------------
+		Sun Dec 01 2019 18:09:20 GMT+0200 (South Africa Standard Time)
+------------------------------------------------------
+
+Modified files:
+* package-lock.json
+* package.json
+* src/app/app-routing.module.ts
+
+
+Created files:
+* .autogit/logs/log-1-11-2019-17-39-14.txt
+* src/app/layout/bets/bets.component.html
+* src/app/layout/bets/bets.component.scss
+* src/app/layout/bets/bets.component.spec.ts
+* src/app/layout/bets/bets.component.ts
+* src/app/layout/events/events.component.html
+* src/app/layout/events/events.component.scss
+* src/app/layout/events/events.component.spec.ts
+* src/app/layout/events/events.component.ts
+* src/app/layout/layout-routing.module.ts
+* src/app/layout/layout.component.html
+* src/app/layout/layout.component.scss
+* src/app/layout/layout.component.spec.ts
+* src/app/layout/layout.component.ts
+* src/app/layout/layout.module.ts
+* src/app/layout/markets/markets.component.html
+* src/app/layout/markets/markets.component.scss
+* src/app/layout/markets/markets.component.spec.ts
+* src/app/layout/markets/markets.component.ts
+* src/app/shared/interfaces/bet.interface.ts
+* src/app/shared/interfaces/market.interface.ts
+* src/app/shared/modules/material.module.ts
+
+
+Deleted files:
+
+
+Renamed files:

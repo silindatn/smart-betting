@@ -5,6 +5,7 @@ import { EventsComponent } from './events/events.component';
 import { MarketsComponent } from './markets/markets.component';
 import { BetsComponent } from './bets/bets.component';
 import { MaterialModule } from '../shared/modules/material.module';
+import { LayoutRoutingModule } from './layout-routing.module';
 
 
 
@@ -17,6 +18,7 @@ import { MaterialModule } from '../shared/modules/material.module';
   ],
   imports: [
     CommonModule,
+    LayoutRoutingModule,
     MaterialModule
   ]
 })

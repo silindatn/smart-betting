@@ -2,6 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
+import { EventComponent } from 'src/app/components/dialog/event/event.component';
+import { MatDialog } from '@angular/material';
 
 @Component({
   selector: 'app-events',
@@ -16,9 +18,17 @@ export class EventsComponent implements OnInit {
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
+  constructor(
+    public dialog: MatDialog
+  ) {}
+
   ngOnInit() {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
+  }
+
+  openDialog() {
+    this.dialog.open(EventComponent, {});
   }
 
   applyFilter(filterValue: string) {

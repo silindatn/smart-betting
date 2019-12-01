@@ -6,10 +6,10 @@
             </mat-form-field>
         </div>
         <div class="col-md-2">
-            <button mat-raised-button color="primary">Primary</button>
+            <button mat-raised-button color="primary" (click)="openDialog()">Add Event</button>
         </div>
     </div>
-    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort>
 
         <!-- Position Column -->
         <ng-container matColumnDef="position">

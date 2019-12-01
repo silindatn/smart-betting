@@ -1,5 +1,8 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+
+import * as moment from 'moment';
+
 import { IEvent } from 'src/app/shared/interfaces/event.interface';
 
 @Component({
@@ -9,11 +12,12 @@ import { IEvent } from 'src/app/shared/interfaces/event.interface';
 })
 export class EventComponent implements OnInit {
   title = '';
+  today = new Date();
   event: IEvent = {
-    descrition: '',
+    description: '',
     endDate: '',
     name: '',
-    startDate: '',
+    startDate: new Date(),
     id: ''
   };
 
@@ -28,6 +32,14 @@ export class EventComponent implements OnInit {
     }
 
   ngOnInit() {
+  }
+
+  myFilter = (d: Date): boolean => {
+    return moment(d).isSameOrAfter(this.event.startDate);
+  }
+
+  myFilterStart = (d: Date): boolean => {
+    return moment(d).isSameOrAfter(this.today);
   }
 
   onNoClick(): void {

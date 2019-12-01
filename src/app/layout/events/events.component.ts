@@ -28,7 +28,7 @@ export class EventsComponent implements OnInit {
   }
 
   openDialog() {
-    this.dialog.open(EventComponent, {});
+    this.dialog.open(EventComponent, {width: '500px'});
   }
 
   applyFilter(filterValue: string) {

@@ -1,0 +1,17 @@
+-------------------- Auto-Git Log --------------------
+		Sun Dec 01 2019 17:39:14 GMT+0200 (South Africa Standard Time)
+------------------------------------------------------
+
+Modified files:
+
+
+Created files:
+* .autogit/autogit.json
+* src/app/shared/enums/event-type.enum.ts
+* src/app/shared/interfaces/event.interface.ts
+
+
+Deleted files:
+
+
+Renamed files:

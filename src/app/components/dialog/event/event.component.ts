@@ -26,8 +26,11 @@ export class EventComponent implements OnInit {
   constructor(
     public dialogRef: MatDialogRef<EventComponent>,
     private apiServ: ApiService,
-    @Inject(MAT_DIALOG_DATA) public data: any) {
+    @Inject(MAT_DIALOG_DATA) public data: IEvent) {
       if (this.data) {
+        this.event = this.data;
+        this.startTime = {hour: new Date(this.data.startDate).getHours(), minute: new Date(this.data.startDate).getMinutes()};
+        this.endTime = {hour: new Date(this.data.endDate).getHours(), minute: new Date(this.data.endDate).getMinutes()};
         this.title = 'Edit Event';
       } else {
         this.title = 'Add Event';

@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class HttpHelperService {
-  baseUrl = ' https://my-json-server.typicode.com/silindatn/smart-db/';
+  baseUrl = 'https://my-json-server.typicode.com/silindatn/smart-db/';
 
   constructor(private http: HttpClient) { }
 
@@ -13,8 +13,9 @@ export class HttpHelperService {
     return this.http.put(this.baseUrl + url + '/' + data.id, data);
   }
 
-  get(url, id) {
-    return this.http.get(this.baseUrl + url + '/' + id);
+  get(url, id = null) {
+    const getUrl = id ? this.baseUrl + url + '/' + id : this.baseUrl + url;
+    return this.http.get(getUrl);
   }
 
   delete(url, id) {

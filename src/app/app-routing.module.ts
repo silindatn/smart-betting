@@ -6,8 +6,9 @@ import { LeaderboardComponent } from './components/leaderboard/leaderboard.compo
 import { SignInComponent } from './components/sign-in/sign-in.component';
 
 const routes: Routes = [
+  { path: '', loadChildren: () => import('./layout/layout.module').then(m => m.LayoutModule)},
   {
-    path: '',
+    path: 'bet-form',
     component: BetFormComponent,
     canActivate: [AuthGuardService]
   },

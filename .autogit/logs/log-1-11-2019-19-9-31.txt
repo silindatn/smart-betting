@@ -1,0 +1,38 @@
+-------------------- Auto-Git Log --------------------
+		Sun Dec 01 2019 19:09:31 GMT+0200 (South Africa Standard Time)
+------------------------------------------------------
+
+Modified files:
+* angular.json
+* package-lock.json
+* package.json
+* src/app/app.module.ts
+* src/app/layout/events/events.component.html
+* src/app/layout/events/events.component.ts
+* src/index.html
+* src/main.ts
+* src/styles.scss
+* src/styles/app.scss
+
+
+Created files:
+* .autogit/logs/log-1-11-2019-18-39-25.txt
+* src/app/components/components.module.ts
+* src/app/components/dialog/bet/bet.component.html
+* src/app/components/dialog/bet/bet.component.scss
+* src/app/components/dialog/bet/bet.component.spec.ts
+* src/app/components/dialog/bet/bet.component.ts
+* src/app/components/dialog/event/event.component.html
+* src/app/components/dialog/event/event.component.scss
+* src/app/components/dialog/event/event.component.spec.ts
+* src/app/components/dialog/event/event.component.ts
+* src/app/components/dialog/market/market.component.html
+* src/app/components/dialog/market/market.component.scss
+* src/app/components/dialog/market/market.component.spec.ts
+* src/app/components/dialog/market/market.component.ts
+
+
+Deleted files:
+
+
+Renamed files:

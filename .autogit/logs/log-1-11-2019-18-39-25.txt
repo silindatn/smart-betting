@@ -1,0 +1,113 @@
+-------------------- Auto-Git Log --------------------
+		Sun Dec 01 2019 18:39:25 GMT+0200 (South Africa Standard Time)
+------------------------------------------------------
+
+Modified files:
+* angular.json
+* package-lock.json
+* package.json
+* src/app/app.component.html
+* src/app/app.module.ts
+* src/app/layout/events/events.component.html
+* src/app/layout/events/events.component.scss
+* src/app/layout/events/events.component.ts
+* src/app/layout/layout.component.html
+* src/app/layout/layout.module.ts
+
+
+Created files:
+* .autogit/logs/log-1-11-2019-18-9-20.txt
+* src/styles/_responsive.scss
+* src/styles/_rtl.scss
+* src/styles/_spinner.scss
+* src/styles/_utils.scss
+* src/styles/app.scss
+* src/styles/bootstrap/_alert.scss
+* src/styles/bootstrap/_badge.scss
+* src/styles/bootstrap/_breadcrumb.scss
+* src/styles/bootstrap/_button-group.scss
+* src/styles/bootstrap/_buttons.scss
+* src/styles/bootstrap/_card.scss
+* src/styles/bootstrap/_carousel.scss
+* src/styles/bootstrap/_close.scss
+* src/styles/bootstrap/_code.scss
+* src/styles/bootstrap/_custom-forms.scss
+* src/styles/bootstrap/_dropdown.scss
+* src/styles/bootstrap/_forms.scss
+* src/styles/bootstrap/_functions.scss
+* src/styles/bootstrap/_grid.scss
+* src/styles/bootstrap/_images.scss
+* src/styles/bootstrap/_input-group.scss
+* src/styles/bootstrap/_jumbotron.scss
+* src/styles/bootstrap/_list-group.scss
+* src/styles/bootstrap/_media.scss
+* src/styles/bootstrap/_mixins.scss
+* src/styles/bootstrap/_modal.scss
+* src/styles/bootstrap/_nav.scss
+* src/styles/bootstrap/_navbar.scss
+* src/styles/bootstrap/_pagination.scss
+* src/styles/bootstrap/_popover.scss
+* src/styles/bootstrap/_print.scss
+* src/styles/bootstrap/_progress.scss
+* src/styles/bootstrap/_reboot.scss
+* src/styles/bootstrap/_root.scss
+* src/styles/bootstrap/_tables.scss
+* src/styles/bootstrap/_tooltip.scss
+* src/styles/bootstrap/_transitions.scss
+* src/styles/bootstrap/_type.scss
+* src/styles/bootstrap/_utilities.scss
+* src/styles/bootstrap/_variables.scss
+* src/styles/bootstrap/bootstrap-grid.scss
+* src/styles/bootstrap/bootstrap-reboot.scss
+* src/styles/bootstrap/bootstrap.scss
+* src/styles/bootstrap/mixins/_alert.scss
+* src/styles/bootstrap/mixins/_background-variant.scss
+* src/styles/bootstrap/mixins/_badge.scss
+* src/styles/bootstrap/mixins/_border-radius.scss
+* src/styles/bootstrap/mixins/_box-shadow.scss
+* src/styles/bootstrap/mixins/_breakpoints.scss
+* src/styles/bootstrap/mixins/_buttons.scss
+* src/styles/bootstrap/mixins/_caret.scss
+* src/styles/bootstrap/mixins/_clearfix.scss
+* src/styles/bootstrap/mixins/_float.scss
+* src/styles/bootstrap/mixins/_forms.scss
+* src/styles/bootstrap/mixins/_gradients.scss
+* src/styles/bootstrap/mixins/_grid-framework.scss
+* src/styles/bootstrap/mixins/_grid.scss
+* src/styles/bootstrap/mixins/_hover.scss
+* src/styles/bootstrap/mixins/_image.scss
+* src/styles/bootstrap/mixins/_list-group.scss
+* src/styles/bootstrap/mixins/_lists.scss
+* src/styles/bootstrap/mixins/_nav-divider.scss
+* src/styles/bootstrap/mixins/_navbar-align.scss
+* src/styles/bootstrap/mixins/_pagination.scss
+* src/styles/bootstrap/mixins/_reset-text.scss
+* src/styles/bootstrap/mixins/_resize.scss
+* src/styles/bootstrap/mixins/_screen-reader.scss
+* src/styles/bootstrap/mixins/_size.scss
+* src/styles/bootstrap/mixins/_table-row.scss
+* src/styles/bootstrap/mixins/_text-emphasis.scss
+* src/styles/bootstrap/mixins/_text-hide.scss
+* src/styles/bootstrap/mixins/_text-truncate.scss
+* src/styles/bootstrap/mixins/_transition.scss
+* src/styles/bootstrap/mixins/_visibility.scss
+* src/styles/bootstrap/utilities/_align.scss
+* src/styles/bootstrap/utilities/_background.scss
+* src/styles/bootstrap/utilities/_borders.scss
+* src/styles/bootstrap/utilities/_clearfix.scss
+* src/styles/bootstrap/utilities/_display.scss
+* src/styles/bootstrap/utilities/_embed.scss
+* src/styles/bootstrap/utilities/_flex.scss
+* src/styles/bootstrap/utilities/_float.scss
+* src/styles/bootstrap/utilities/_position.scss
+* src/styles/bootstrap/utilities/_screenreaders.scss
+* src/styles/bootstrap/utilities/_sizing.scss
+* src/styles/bootstrap/utilities/_spacing.scss
+* src/styles/bootstrap/utilities/_text.scss
+* src/styles/bootstrap/utilities/_visibility.scss
+
+
+Deleted files:
+
+
+Renamed files:

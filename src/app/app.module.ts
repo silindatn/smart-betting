@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -13,7 +14,7 @@ import { LeaderboardComponent } from './components/leaderboard/leaderboard.compo
 import { OrderByPipe } from './utils/order-by.pipe';
 import { AuthService } from './services/auth.service';
 import { DataService } from './services/data.service';
-import { from } from 'rxjs';
+import { ComponentsModule } from './components/components.module';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,9 @@ import { from } from 'rxjs';
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    ComponentsModule,
     AppRoutingModule
   ],
   providers: [

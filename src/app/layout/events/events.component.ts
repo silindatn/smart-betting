@@ -32,9 +32,9 @@ export class EventsComponent implements OnInit {
     this.dataSource.sort = this.sort;
   }
 
-  openDialog() {
+  openDialog(element) {
     const vm = this;
-    const dialogRef = vm.dialog.open(EventComponent, {width: '500px'});
+    const dialogRef = vm.dialog.open(EventComponent, {width: '500px', data: element});
     dialogRef.afterClosed().subscribe((event: IEvent) => {
       if (event) {
         vm.getEvents();
@@ -49,9 +49,10 @@ export class EventsComponent implements OnInit {
   getEvents() {
     const vm = this;
     vm.loading = true;
-    vm.apiServ.getEvents().subscribe((events: IEvent[]) => {
+    vm.apiServ.getEvents().subscribe((response: any) => {
+      console.log('......', response);
       vm.loading = false;
-      vm.dataSource.data = events;
+      vm.dataSource.data = response.data;
     }, (error) => {
       vm.loading = false;
     });

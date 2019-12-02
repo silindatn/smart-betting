@@ -15,6 +15,7 @@ import { OrderByPipe } from './utils/order-by.pipe';
 import { AuthService } from './services/auth.service';
 import { DataService } from './services/data.service';
 import { ComponentsModule } from './components/components.module';
+import { MAT_DIALOG_DATA } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { ComponentsModule } from './components/components.module';
   providers: [
     AuthGuardService,
     AuthService,
-    DataService
+    DataService,
+    { provide: MAT_DIALOG_DATA, useValue: {} }
   ],
   bootstrap: [AppComponent]
 })

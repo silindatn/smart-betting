@@ -5,7 +5,8 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class HttpHelperService {
-  baseUrl = 'https://my-json-server.typicode.com/silindatn/smart-db/';
+  // baseUrl = 'https://my-json-server.typicode.com/silindatn/smart-db/';
+  baseUrl = 'http://localhost:9000/api/';
 
   constructor(private http: HttpClient) { }
 

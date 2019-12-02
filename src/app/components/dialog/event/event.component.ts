@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 import * as moment from 'moment';
 
@@ -23,13 +23,16 @@ export class EventComponent implements OnInit {
     startDate: new Date()
   };
   loading = false;
+  isEdit = false;
 
   constructor(
     public dialogRef: MatDialogRef<EventComponent>,
     private apiServ: ApiService,
     @Inject(MAT_DIALOG_DATA) public data: IEvent) {
-      if (this.data) {
+      console.log('ev ....', this.data);
+      if (this.data && this.data.name) {
         this.event = this.data;
+        this.isEdit = true;
         this.startTime = {hour: new Date(this.data.startDate).getHours(), minute: new Date(this.data.startDate).getMinutes()};
         this.endTime = {hour: new Date(this.data.endDate).getHours(), minute: new Date(this.data.endDate).getMinutes()};
         this.title = 'Edit Event';
@@ -61,12 +64,21 @@ export class EventComponent implements OnInit {
       new Date(moment(this.event.endDate).format('YYYY/MM/DD') + ' ' + this.endTime.hour + ':' + this.endTime.minute + ':00');
     console.log('event ', this.event);
     const vm = this;
-    vm.apiServ.createEvent(this.event).subscribe((res: IEvent) => {
+    if (vm.isEdit) {
+      vm.apiServ.updateEvent(this.event).subscribe((res: any) => {
+        vm.loading = false;
+        vm.dialogRef.close(res.data);
+      }, (error) => {
+        vm.loading = false;
+      });
+    } else {
+    vm.apiServ.createEvent(this.event).subscribe((res: any) => {
       vm.loading = false;
-      vm.dialogRef.close(res);
+      vm.dialogRef.close(res.data);
     }, (error) => {
       vm.loading = false;
     });
+  }
   }
 
 }

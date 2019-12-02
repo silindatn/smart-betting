@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Md5 } from 'ts-md5/dist/md5';
+// import { Md5 } from 'ts-md5/dist/md5';
 
 import { environment } from '../../environments/environment';
 
@@ -18,9 +18,9 @@ export class AuthService {
     localStorage.setItem('username', username);
   }
 
-  private hashPassword(password): string {
-    return <string>Md5.hashStr(password);
-  }
+  // private hashPassword(password): string {
+  //   return <string>Md5.hashStr(password);
+  // }
 
   getUsername(): string {
     return localStorage.getItem('username');
@@ -35,12 +35,12 @@ export class AuthService {
   }
 
   signUp(username: string, password: string) {
-    password = this.hashPassword(password);
+    // password = this.hashPassword(password);
     return this.http.post(environment.apiUrl + '/users/sign-up', { username, password });
   }
 
   signIn(username: string, password: string) {
-    password = this.hashPassword(password);
+    // password = this.hashPassword(password);
     return this.http.post(environment.apiUrl + '/users/sign-in', { username, password });
   }
 

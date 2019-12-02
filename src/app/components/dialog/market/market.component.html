@@ -1,1 +1,37 @@
-<p>market works!</p>
+<h2 mat-dialog-title>{{title}}</h2>
+<mat-dialog-content>
+    <mat-form-field class="example-form-field">
+        <input matInput type="text" placeholder="Name" [(ngModel)]="market.name">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Select an option</mat-label>
+        <mat-select [(value)]="market.eventId">
+          <mat-option>None</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field class="example-chip-list">
+        <mat-chip-list #chipList aria-label="Fruit selection">
+          <mat-chip *ngFor="let outcome of market.posibleOutcome" [selectable]="selectable"
+                   [removable]="removable" (removed)="remove(outcome)">
+            {{outcome}}
+            <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+          </mat-chip>
+          <input placeholder="New fruit..."
+                 [matChipInputFor]="chipList"
+                 [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                 [matChipInputAddOnBlur]="addOnBlur"
+                 (matChipInputTokenEnd)="add($event)">
+        </mat-chip-list>
+      </mat-form-field>
+      
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-raised-button [mat-dialog-close]="true">Cancel</button>
+  <button mat-raised-button color="primary" (click)="onSave()">Save</button>
+</mat-dialog-actions>
+<ng-template #customLoadingTemplate>
+        <h3>
+            Saving Event ...
+        </h3>
+</ng-template>
+<ngx-loading [show]="loading" [template]="customLoadingTemplate"></ngx-loading>

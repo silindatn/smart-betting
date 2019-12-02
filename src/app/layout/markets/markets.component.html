@@ -1,3 +1,9 @@
+<div class="row">
+    <div class="col-md-10"></div>
+    <div class="col-md-2">
+        <button mat-raised-button color="primary">Primary</button>
+    </div>
+</div>
 <table mat-table
        [dataSource]="dataSource" multiTemplateDataRows
        class="mat-elevation-z8">
@@ -33,3 +39,9 @@
   </tr>
   <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
 </table>
+<ng-template #customLoadingTemplate>
+    <h3>
+        Loading Events...
+    </h3>
+</ng-template>
+<ngx-loading [show]="loading" [template]="customLoadingTemplate"></ngx-loading>

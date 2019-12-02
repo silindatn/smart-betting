@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import { MarketComponent } from 'src/app/components/dialog/market/market.component';
+import { MatDialog } from '@angular/material';
+import { ApiService } from 'src/app/shared/services/api.service';
+import { IEvent } from 'src/app/shared/interfaces/event.interface';
+import { IMarket } from 'src/app/shared/interfaces/market.interface';
 
 @Component({
   selector: 'app-markets',
@@ -18,9 +23,30 @@ export class MarketsComponent implements OnInit {
   dataSource = ELEMENT_DATA;
   columnsToDisplay = ['name', 'weight', 'symbol', 'position'];
   expandedElement: PeriodicElement | null;
-  constructor() { }
+  loading = false;
+
+  constructor(
+    public dialog: MatDialog,
+    private apiServ: ApiService
+    ) { }
 
   ngOnInit() {
+  }
+
+  openDialog(element) {
+    const vm = this;
+    const dialogRef = vm.dialog.open(MarketComponent, {width: '500px', data: element});
+    dialogRef.afterClosed().subscribe((market: IMarket) => {
+      if (market) {
+        vm.getMarkets();
+      }
+    });
+  }
+  getMarkets() {
+    const vm = this;
+    vm.apiServ.getMarkets().subscribe((response: any) => {
+      vm.dataSource = response.data;
+    });
   }
 
 }

@@ -1,0 +1,70 @@
+<!--<div class="currencies text-center">
+  <div class="container">
+    <i class="fa fa-btc fa-2x" aria-hidden="true"></i>
+    <i class="fa fa-long-arrow-right fa-2x" aria-hidden="true"></i>
+    <i class="fa fa-inr fa-2x" aria-hidden="true"></i>
+  </div>
+</div>-->
+
+<h4 class="text-center heading">Predict price of Bitcoin at {{hours+1}}:00</h4>
+
+<div class="previous card bg-light center">
+  <div class="card-header">
+    Current Rate
+  </div>
+  <div class="card-body text-center">
+    <h3 class="card-text"><i class="fa fa-inr fa" aria-hidden="true"></i> {{rate}}</h3>
+  </div>
+  <div class="card-footer text-muted">
+    At {{time}}
+    <p class="card-text pull-right"><small class="text-muted">Powered by Coindesk</small></p>
+  </div>
+
+</div>
+
+<div class="wallet card center text-white bg-info">
+  <div class="card-header">
+    Wallet Balance
+  </div>
+  <div class="card-body text-center">
+    <h3 class="card-text">{{balance}} PslCoins</h3>
+  </div>
+</div>
+
+<div class="current card center">
+  <div class="card-header">
+    Your Prediction
+  </div>
+  <div class="card-body text-center">
+    <form (submit)="makePrediction(userPrediction.value)" ngNativeValidate>
+      <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon" id="basic-addon1"><i class="fa fa-inr" aria-hidden="true"></i></span>
+          <input class="form-control" #userPrediction id="userPrediction" required value='{{rate}}' pattern="\d{1,10}">
+        </div>
+        <small id="betHelp" class="form-text text-muted">Bet will be {{coins}} PslCoins </small>
+      </div>
+      <button type="submit" class="btn btn-primary">Bet {{coins}} PslCoins</button>
+    </form>
+  </div>
+</div>
+
+<div *ngIf='showSuccessMessage' class="alert alert-success text-center center" role="alert">
+  You bet <strong>{{coins}} PslCoins</strong> on <strong>{{prediction}}</strong>
+</div>
+
+<div *ngIf='showErrorMessage' class="alert alert-danger text-center center" role="alert">
+  Something went wrong. Please try again.
+</div>
+
+<div class="card center bg-light">
+  <div class="card-header">
+    Predictions so far
+  </div>
+  <div class="card-body" *ngFor='let bet of bets'>
+    <p class="prediction card-text">{{bet.prediction}}</p>
+    <p class="time pull-right">{{bet.time}}</p>
+    <p class="amount card-text text-muted">{{bet.amount}} PslCoins</p>
+    <hr>
+  </div>
+</div>

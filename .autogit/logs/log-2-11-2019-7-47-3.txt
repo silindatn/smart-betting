@@ -1,0 +1,19 @@
+-------------------- Auto-Git Log --------------------
+		Mon Dec 02 2019 07:47:03 GMT+0200 (South Africa Standard Time)
+------------------------------------------------------
+
+Modified files:
+* src/app/app.component.html
+* src/app/layout/layout.component.html
+* src/app/layout/layout.component.scss
+* src/app/layout/layout.component.ts
+
+
+Created files:
+* .autogit/logs/log-2-11-2019-7-16-53.txt
+
+
+Deleted files:
+
+
+Renamed files:

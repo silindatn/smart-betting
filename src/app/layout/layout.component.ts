@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./layout.component.scss']
 })
 export class LayoutComponent implements OnInit {
-
+  fillerNav = [];
   constructor() { }
 
   ngOnInit() {
+    this.fillerNav = Array(16).fill(0).map((_, i) => `Nav Item ${i + 1}`);
   }
 
 }

@@ -1,0 +1,16 @@
+-------------------- Auto-Git Log --------------------
+		Tue Dec 03 2019 18:15:34 GMT+0200 (South Africa Standard Time)
+------------------------------------------------------
+
+Modified files:
+* src/app/shared/interfaces/market.interface.ts
+
+
+Created files:
+* .autogit/logs/log-3-11-2019-17-45-28.txt
+
+
+Deleted files:
+
+
+Renamed files:

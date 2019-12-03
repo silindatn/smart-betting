@@ -6,6 +6,8 @@ import { ApiService } from 'src/app/shared/services/api.service';
 import { IEvent } from 'src/app/shared/interfaces/event.interface';
 import { IMarket } from 'src/app/shared/interfaces/market.interface';
 
+import * as _ from 'lodash';
+
 @Component({
   selector: 'app-markets',
   templateUrl: './markets.component.html',
@@ -20,10 +22,11 @@ import { IMarket } from 'src/app/shared/interfaces/market.interface';
 })
 export class MarketsComponent implements OnInit {
 
-  dataSource = ELEMENT_DATA;
-  columnsToDisplay = ['name', 'weight', 'symbol', 'position'];
-  expandedElement: PeriodicElement | null;
+  dataSource: IMarket[] = [];
+  columnsToDisplay = ['id', 'name', 'Event Name'];
+  expandedElement: IMarket | null;
   loading = false;
+  events: IEvent[] = [];
 
   constructor(
     public dialog: MatDialog,
@@ -31,6 +34,8 @@ export class MarketsComponent implements OnInit {
     ) { }
 
   ngOnInit() {
+    this.getEvents();
+    this.getMarkets();
   }
 
   openDialog(element) {
@@ -47,6 +52,21 @@ export class MarketsComponent implements OnInit {
     vm.apiServ.getMarkets().subscribe((response: any) => {
       vm.dataSource = response.data;
     });
+  }
+
+  getEvents() {
+    const vm = this;
+    vm.apiServ.getEvents().subscribe((response: any) => {
+      vm.events = response.data;
+    });
+  }
+
+  eventDisplayName(element: IMarket) {
+    console.log('...', element);
+    console.log('...---', this.events);
+    const index = _.findIndex(this.events, ['id', element.eventId]);
+    console.log('---', index);
+    return index >= 0 ? this.events[index].name : null;
   }
 
 }

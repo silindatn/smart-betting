@@ -2,7 +2,7 @@ import { IEvent } from './event.interface';
 
 export interface IMarket {
     id?: string | number;
-    event: string | number | IEvent;
+    eventId: string | number;
     posibleOutcome: string[];
     name: string;
 }

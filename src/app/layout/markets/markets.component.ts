@@ -23,7 +23,7 @@ import * as _ from 'lodash';
 export class MarketsComponent implements OnInit {
 
   dataSource: IMarket[] = [];
-  columnsToDisplay = ['id', 'name', 'Event Name'];
+  columnsToDisplay = ['id', 'name', 'Event Name', 'menu'];
   expandedElement: IMarket | null;
   loading = false;
   events: IEvent[] = [];
@@ -62,10 +62,8 @@ export class MarketsComponent implements OnInit {
   }
 
   eventDisplayName(element: IMarket) {
-    console.log('...', element);
-    console.log('...---', this.events);
     const index = _.findIndex(this.events, ['id', element.eventId]);
-    console.log('---', index);
+
     return index >= 0 ? this.events[index].name : null;
   }
 

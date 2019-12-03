@@ -4,9 +4,9 @@
         <input matInput type="text" placeholder="Name" [(ngModel)]="market.name">
     </mat-form-field>
     <mat-form-field>
-        <mat-label>Select an option</mat-label>
+        <mat-label>Select an Event</mat-label>
         <mat-select [(value)]="market.eventId">
-          <mat-option>None</mat-option>
+          <mat-option *ngFor="let event of events" [value]="event.id"> {{ event.name }} </mat-option>
         </mat-select>
     </mat-form-field>
     <mat-form-field class="example-chip-list">

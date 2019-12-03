@@ -3,6 +3,7 @@ import { MatDialogRef, MAT_DIALOG_DATA, MatChipInputEvent } from '@angular/mater
 import {COMMA, ENTER} from '@angular/cdk/keycodes';
 import { ApiService } from 'src/app/shared/services/api.service';
 import { IMarket } from 'src/app/shared/interfaces/market.interface';
+import { IEvent } from 'src/app/shared/interfaces/event.interface';
 
 @Component({
   selector: 'app-market',
@@ -23,6 +24,7 @@ export class MarketComponent implements OnInit {
   };
   loading = false;
   isEdit = false;
+  events: IEvent[] = [];
 
   constructor(
     public dialogRef: MatDialogRef<MarketComponent>,
@@ -38,6 +40,14 @@ export class MarketComponent implements OnInit {
     }
 
   ngOnInit() {
+    this.getEvents();
+  }
+
+  getEvents() {
+    const vm = this;
+    vm.apiServ.getEvents().subscribe((response: any) => {
+      vm.events = response.data;
+    });
   }
 
   add(event: MatChipInputEvent): void {

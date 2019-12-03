@@ -7,7 +7,7 @@
 	<mat-drawer-container>
 		<mat-drawer #snav [mode]="'side'">
 			<mat-nav-list>
-				<a mat-list-item routerLink="." *ngFor="let nav of fillerNav">{{nav}}</a>
+				<a mat-list-item *ngFor="let nav of fillerNav"  [routerLink]="nav.url" >{{nav.name}}</a>
 			</mat-nav-list>
 		</mat-drawer>
 

@@ -39,7 +39,7 @@
         </div> -->
         <div class="example-element-description">
             <mat-chip-list aria-label="Fish selection">
-                <mat-chip *ngFor="let outcome of element.posibleOutcome" color="primary" selected>{{ outcome }}</mat-chip>
+                <mat-chip *ngFor="let outcome of element.posibleOutcome" color="primary" selected>{{ outcome.name }}( {{ outcome.probability }})</mat-chip>
               </mat-chip-list>
         </div>
       </div>

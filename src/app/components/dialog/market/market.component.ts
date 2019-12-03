@@ -4,6 +4,7 @@ import {COMMA, ENTER} from '@angular/cdk/keycodes';
 import { ApiService } from 'src/app/shared/services/api.service';
 import { IMarket } from 'src/app/shared/interfaces/market.interface';
 import { IEvent } from 'src/app/shared/interfaces/event.interface';
+import { IOutcome } from 'src/app/shared/interfaces/outcome.interface';
 
 @Component({
   selector: 'app-market',
@@ -50,23 +51,14 @@ export class MarketComponent implements OnInit {
     });
   }
 
-  add(event: MatChipInputEvent): void {
-    const input = event.input;
-    const value = event.value;
-
-    // Add our fruit
-    if ((value || '').trim()) {
-      this.market.posibleOutcome.push(value.trim());
-    }
-
-    // Reset the input value
-    if (input) {
-      input.value = '';
-    }
+  newOutcome() {
+    this.market.posibleOutcome.push({name: 'outcome ' + this.market.posibleOutcome.length, probability: 1});
   }
 
-  remove(outcome: string): void {
-    const index = this.market.posibleOutcome.indexOf(outcome);
+  remove(outcome: IOutcome): void {
+    const index = this.market.posibleOutcome.findIndex(m => {
+      return m.name === outcome.name;
+    });
 
     if (index >= 0) {
       this.market.posibleOutcome.splice(index, 1);

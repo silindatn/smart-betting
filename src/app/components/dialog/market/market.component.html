@@ -9,8 +9,24 @@
           <mat-option *ngFor="let event of events" [value]="event.id"> {{ event.name }} </mat-option>
         </mat-select>
     </mat-form-field>
-    <mat-form-field class="example-chip-list">
-        <mat-chip-list #chipList aria-label="Fruit selection">
+    <div class="example-chip-list">
+        <button mat-raised-button color="primary" (click)="newOutcome()">Add Outcome</button>
+        <div class="row" *ngFor="let outcome of market.posibleOutcome">
+            <div class="col-md-4">
+                <mat-form-field>
+                    <input matInput type="text" placeholder="Name" [(ngModel)]="outcome.name">
+                </mat-form-field>
+            </div>
+            <div class="col-md-4">
+                <mat-form-field>
+                    <input matInput type="text" placeholder="Probability" [(ngModel)]="outcome.probability">
+                </mat-form-field>
+            </div>
+            <div class="col-md-4">
+                <button mat-raised-button color="primary" (click)="remove()">Remove</button>
+            </div>
+        </div>
+        <!-- <mat-chip-list #chipList aria-label="Fruit selection">
           <mat-chip *ngFor="let outcome of market.posibleOutcome" [selectable]="selectable"
                    [removable]="removable" (removed)="remove(outcome)">
             {{outcome}}
@@ -21,8 +37,8 @@
                  [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
                  [matChipInputAddOnBlur]="addOnBlur"
                  (matChipInputTokenEnd)="add($event)">
-        </mat-chip-list>
-      </mat-form-field>
+        </mat-chip-list> -->
+    </div>
       
 </mat-dialog-content>
 <mat-dialog-actions>

@@ -5,6 +5,6 @@ export interface IBet {
     posibleOutcome: IOutcome;
     amount: string | number;
     eventId: string | number;
-    merketId: string | number;
+    marketId: string | number;
     userId: string | number;
 }

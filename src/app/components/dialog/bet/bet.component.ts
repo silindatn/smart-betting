@@ -6,6 +6,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { MarketComponent } from '../market/market.component';
 import { ApiService } from 'src/app/shared/services/api.service';
 import { IOutcome } from 'src/app/shared/interfaces/outcome.interface';
+import { IBet } from 'src/app/shared/interfaces/bet.interface';
 
 @Component({
   selector: 'app-bet',
@@ -20,30 +21,35 @@ export class BetComponent implements OnInit {
   removable = true;
   addOnBlur = true;
   readonly separatorKeysCodes: number[] = [ENTER, COMMA];
-  market: IMarket = {
+  bet: IBet = {
     eventId: null,
-    posibleOutcome: [],
-    name: ''
+    posibleOutcome: null,
+    marketId: null,
+    amount: 0,
+    userId: null
   };
   loading = false;
   isEdit = false;
   events: IEvent[] = [];
+  markets: IMarket[] = [];
+  posibleOutcomes: IOutcome[] = [];
 
   constructor(
-    public dialogRef: MatDialogRef<MarketComponent>,
+    public dialogRef: MatDialogRef<BetComponent>,
     private apiServ: ApiService,
-    @Inject(MAT_DIALOG_DATA) public data: IMarket) {
-      if (this.data && this.data.name) {
-        this.market = this.data;
+    @Inject(MAT_DIALOG_DATA) public data: IBet) {
+      if (this.data && this.data.eventId) {
+        this.bet = this.data;
         this.isEdit = true;
-        this.title = 'Edit MArket';
+        this.title = 'Edit Bet';
       } else {
-        this.title = 'Add Market';
+        this.title = 'Add Bet';
       }
     }
 
   ngOnInit() {
     this.getEvents();
+    this.getMarkets();
   }
 
   getEvents() {
@@ -52,19 +58,18 @@ export class BetComponent implements OnInit {
       vm.events = response.data;
     });
   }
-
-  newOutcome() {
-    this.market.posibleOutcome.push({name: 'outcome ' + this.market.posibleOutcome.length, probability: 1});
+  getMarkets() {
+    const vm = this;
+    vm.apiServ.getMarkets().subscribe((response: any) => {
+      vm.markets = response.data;
+    });
   }
 
-  remove(outcome: IOutcome): void {
-    const index = this.market.posibleOutcome.findIndex(m => {
-      return m.name === outcome.name;
+  onMarketSelect() {
+    const index = this.markets.findIndex(m => {
+      return m.id === this.bet.marketId;
     });
-
-    if (index >= 0) {
-      this.market.posibleOutcome.splice(index, 1);
-    }
+    this.posibleOutcomes = this.markets[index].posibleOutcome;
   }
 
   onNoClick(): void {
@@ -75,14 +80,14 @@ export class BetComponent implements OnInit {
     this.loading = true;
     const vm = this;
     if (vm.isEdit) {
-      vm.apiServ.updateMarket(this.market).subscribe((res: any) => {
+      vm.apiServ.updateBet(this.bet).subscribe((res: any) => {
         vm.loading = false;
         vm.dialogRef.close(res.data);
       }, (error) => {
         vm.loading = false;
       });
     } else {
-    vm.apiServ.createMarket(this.market).subscribe((res: any) => {
+    vm.apiServ.createBet(this.bet).subscribe((res: any) => {
       vm.loading = false;
       vm.dialogRef.close(res.data);
     }, (error) => {

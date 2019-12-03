@@ -47,4 +47,24 @@ export class ApiService {
   getMarkets() {
     return this.http.get('markets');
   }
+
+  createBet(data) {
+    return this.http.post('bets', data);
+  }
+
+  getBet(id) {
+    return this.http.get('bets', id);
+  }
+
+  deleteBet(id) {
+    return this.http.delete('bets', id);
+  }
+
+  updateBet(data) {
+    return this.http.put('bets', data);
+  }
+
+  getBets() {
+    return this.http.get('bets');
+  }
 }

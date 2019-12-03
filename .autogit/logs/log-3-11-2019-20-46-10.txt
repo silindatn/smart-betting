@@ -1,0 +1,25 @@
+-------------------- Auto-Git Log --------------------
+		Tue Dec 03 2019 20:46:10 GMT+0200 (South Africa Standard Time)
+------------------------------------------------------
+
+Modified files:
+* src/app/components/dialog/bet/bet.component.html
+* src/app/components/dialog/bet/bet.component.ts
+* src/app/components/dialog/event/event.component.html
+* src/app/components/dialog/market/market.component.html
+* src/app/layout/bets/bets.component.html
+* src/app/layout/bets/bets.component.scss
+* src/app/layout/bets/bets.component.ts
+* src/app/layout/events/events.component.html
+* src/app/layout/markets/markets.component.html
+* src/app/shared/interfaces/bet.interface.ts
+
+
+Created files:
+* .autogit/logs/log-3-11-2019-20-16-6.txt
+
+
+Deleted files:
+
+
+Renamed files:

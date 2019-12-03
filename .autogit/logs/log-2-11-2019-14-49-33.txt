@@ -1,0 +1,16 @@
+-------------------- Auto-Git Log --------------------
+		Mon Dec 02 2019 14:49:33 GMT+0200 (South Africa Standard Time)
+------------------------------------------------------
+
+Modified files:
+* src/app/shared/interfaces/event.interface.ts
+
+
+Created files:
+* .autogit/logs/log-2-11-2019-14-19-23.txt
+
+
+Deleted files:
+
+
+Renamed files:

@@ -42,7 +42,7 @@ export class BetsComponent implements OnInit {
     const dialogRef = vm.dialog.open(BetComponent, {width: '500px', data: element});
     dialogRef.afterClosed().subscribe((event: IBet) => {
       if (event) {
-        vm.getEvents();
+        vm.getBets();
       }
     });
   }

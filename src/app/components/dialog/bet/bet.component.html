@@ -2,7 +2,7 @@
 <mat-dialog-content>
     <mat-form-field>
         <mat-label>Select an Event</mat-label>
-        <mat-select [(value)]="bet.eventId">
+        <mat-select [(value)]="bet.eventId" (selectionChange)="onEventSelect()">
             <mat-option *ngFor="let event of events" [value]="event.id"> {{ event.name }} </mat-option>
         </mat-select>
     </mat-form-field>

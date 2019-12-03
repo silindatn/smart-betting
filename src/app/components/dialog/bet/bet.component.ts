@@ -41,6 +41,7 @@ export class BetComponent implements OnInit {
       if (this.data && this.data.eventId) {
         this.bet = this.data;
         this.isEdit = true;
+        this.getMarkets();
         this.title = 'Edit Bet';
       } else {
         this.title = 'Add Bet';
@@ -49,7 +50,6 @@ export class BetComponent implements OnInit {
 
   ngOnInit() {
     this.getEvents();
-    this.getMarkets();
   }
 
   getEvents() {
@@ -59,17 +59,26 @@ export class BetComponent implements OnInit {
     });
   }
   getMarkets() {
+    this.loading = true;
     const vm = this;
-    vm.apiServ.getMarkets().subscribe((response: any) => {
+    vm.apiServ.getMarketsByEventId(this.bet.eventId).subscribe((response: any) => {
       vm.markets = response.data;
+      vm.onMarketSelect();
+      vm.loading = false;
+    }, (error) => {
+      this.loading = false;
     });
+  }
+
+  onEventSelect() {
+    this.getMarkets();
   }
 
   onMarketSelect() {
     const index = this.markets.findIndex(m => {
       return m.id === this.bet.marketId;
     });
-    this.posibleOutcomes = this.markets[index].posibleOutcome;
+    this.posibleOutcomes = index >= 0 ? this.markets[index].posibleOutcome : [];
   }
 
   onNoClick(): void {

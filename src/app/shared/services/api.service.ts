@@ -48,6 +48,10 @@ export class ApiService {
     return this.http.get('markets');
   }
 
+  getMarketsByEventId(eventId) {
+    return this.http.get('markets/by-eventid', eventId);
+  }
+
   createBet(data) {
     return this.http.post('bets', data);
   }

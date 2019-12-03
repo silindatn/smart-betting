@@ -1,6 +1,8 @@
+import { IOutcome } from './outcome.interface';
+
 export interface IBet {
     id?: string | number;
-    posibleOutcome: string;
+    posibleOutcome: IOutcome;
     amount: string | number;
     eventId: string | number;
     merketId: string | number;

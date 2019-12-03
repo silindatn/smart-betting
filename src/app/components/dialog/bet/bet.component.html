@@ -1,1 +1,49 @@
-<p>bet works!</p>
+<h2 mat-dialog-title>{{title}}</h2>
+<mat-dialog-content>
+    <mat-form-field class="example-form-field">
+        <input matInput type="text" placeholder="Name" [(ngModel)]="market.name">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Select an Event</mat-label>
+        <mat-select [(value)]="market.eventId">
+          <mat-option *ngFor="let event of events" [value]="event.id"> {{ event.name }} </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <div class="example-chip-list">
+        <button mat-raised-button color="primary" (click)="newOutcome()">Add Outcome</button>
+        <div class="row" *ngFor="let outcome of market.posibleOutcome">
+            <div class="col-md-4">
+                <mat-form-field>
+                    <input matInput type="text" placeholder="Name" [(ngModel)]="outcome.name">
+                </mat-form-field>
+            </div>
+            <div class="col-md-4">
+                <mat-form-field>
+                    <input matInput type="text" placeholder="Probability" [(ngModel)]="outcome.probability">
+                </mat-form-field>
+            </div>
+            <div class="col-md-4">
+                <button mat-raised-button color="primary" (click)="remove()">Remove</button>
+            </div>
+        </div>
+        <!-- <mat-chip-list #chipList aria-label="Fruit selection">
+          <mat-chip *ngFor="let outcome of market.posibleOutcome" [selectable]="selectable"
+                   [removable]="removable" (removed)="remove(outcome)">
+            {{outcome}}
+            <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+          </mat-chip>
+          <input placeholder="New fruit..."
+                 [matChipInputFor]="chipList"
+                 [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                 [matChipInputAddOnBlur]="addOnBlur"
+                 (matChipInputTokenEnd)="add($event)">
+        </mat-chip-list> -->
+    </div>
+      
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-raised-button [mat-dialog-close]="true">Cancel</button>
+  <button mat-raised-button color="primary" (click)="onSave()">Save</button>
+</mat-dialog-actions>
+
+<ngx-loading [show]="loading"></ngx-loading>

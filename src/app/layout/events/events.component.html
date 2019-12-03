@@ -61,10 +61,6 @@
   
     <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
   </div>
-<ng-template #customLoadingTemplate>
-    <h3>
-        Loading Events...
-    </h3>
-</ng-template>
-<ngx-loading [show]="loading" [template]="customLoadingTemplate"></ngx-loading>
+
+<ngx-loading [show]="loading"></ngx-loading>
   

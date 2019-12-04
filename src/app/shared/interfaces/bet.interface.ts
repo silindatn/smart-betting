@@ -7,4 +7,6 @@ export interface IBet {
     eventId: string | number;
     marketId: string | number;
     userId: string | number;
+    result?: string;
+    winings?: number;
 }

@@ -1,0 +1,15 @@
+<h2 mat-dialog-title>{{title}}</h2>
+<mat-dialog-content>
+    <mat-form-field>
+        <mat-label>Select an Outcome</mat-label>
+        <mat-select [(value)]="market.actualOutcome">
+            <mat-option *ngFor="let outcome of market.posibleOutcomes" [value]="outcome"> {{ outcome.name }}({{outcome.probability}}) </mat-option>
+        </mat-select>
+    </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-raised-button [mat-dialog-close]="true">Cancel</button>
+  <button mat-raised-button color="primary" (click)="onSave()">Save</button>
+</mat-dialog-actions>
+
+<ngx-loading [show]="loading"></ngx-loading>

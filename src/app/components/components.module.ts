@@ -5,6 +5,7 @@ import { BetComponent } from './dialog/bet/bet.component';
 import { MarketComponent } from './dialog/market/market.component';
 import { MaterialModule } from '../shared/modules/material.module';
 import { NgxLoadingModule, ngxLoadingAnimationTypes } from 'ngx-loading';
+import { MarketOutcomeComponent } from './dialog/market-outcome/market-outcome.component';
 
 
 
@@ -12,12 +13,14 @@ import { NgxLoadingModule, ngxLoadingAnimationTypes } from 'ngx-loading';
   declarations: [
     EventComponent,
     BetComponent,
-    MarketComponent
+    MarketComponent,
+    MarketOutcomeComponent
   ],
   entryComponents: [
     EventComponent,
     BetComponent,
-    MarketComponent
+    MarketComponent,
+    MarketOutcomeComponent
   ],
   imports: [
     CommonModule,

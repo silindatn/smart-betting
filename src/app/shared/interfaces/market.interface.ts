@@ -6,4 +6,5 @@ export interface IMarket {
     eventId: string | number;
     posibleOutcome: IOutcome[];
     name: string;
+    actualOutcome?: IOutcome;
 }

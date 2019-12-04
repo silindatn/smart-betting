@@ -7,6 +7,7 @@ import { IEvent } from 'src/app/shared/interfaces/event.interface';
 import { IMarket } from 'src/app/shared/interfaces/market.interface';
 
 import * as _ from 'lodash';
+import { MarketOutcomeComponent } from 'src/app/components/dialog/market-outcome/market-outcome.component';
 
 @Component({
   selector: 'app-markets',
@@ -23,7 +24,7 @@ import * as _ from 'lodash';
 export class MarketsComponent implements OnInit {
 
   dataSource: IMarket[] = [];
-  columnsToDisplay = ['id', 'name', 'Event Name', 'menu'];
+  columnsToDisplay = ['id', 'name', 'Event Name', 'Results', 'menu'];
   expandedElement: IMarket | null;
   loading = false;
   events: IEvent[] = [];
@@ -41,6 +42,15 @@ export class MarketsComponent implements OnInit {
   openDialog(element) {
     const vm = this;
     const dialogRef = vm.dialog.open(MarketComponent, {width: '500px', data: element});
+    dialogRef.afterClosed().subscribe((market: IMarket) => {
+      if (market) {
+        vm.getMarkets();
+      }
+    });
+  }
+  openOutcomeDialog(element) {
+    const vm = this;
+    const dialogRef = vm.dialog.open(MarketOutcomeComponent, {width: '500px', data: element});
     dialogRef.afterClosed().subscribe((market: IMarket) => {
       if (market) {
         vm.getMarkets();

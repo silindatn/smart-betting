@@ -26,7 +26,7 @@ export class BetComponent implements OnInit {
     posibleOutcome: null,
     marketId: null,
     amount: 0,
-    userId: null
+    userId: null,
   };
   loading = false;
   isEdit = false;

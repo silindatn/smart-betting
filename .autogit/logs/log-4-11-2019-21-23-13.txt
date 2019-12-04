@@ -1,0 +1,22 @@
+-------------------- Auto-Git Log --------------------
+		Wed Dec 04 2019 21:23:13 GMT+0200 (South Africa Standard Time)
+------------------------------------------------------
+
+Modified files:
+* package-lock.json
+* package.json
+* src/app/layout/layout.module.ts
+
+
+Created files:
+* .autogit/logs/log-4-11-2019-20-53-7.txt
+* src/app/layout/results/results.component.html
+* src/app/layout/results/results.component.scss
+* src/app/layout/results/results.component.spec.ts
+* src/app/layout/results/results.component.ts
+
+
+Deleted files:
+
+
+Renamed files:

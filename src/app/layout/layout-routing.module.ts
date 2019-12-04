@@ -4,6 +4,7 @@ import { LayoutComponent } from './layout.component';
 import { BetsComponent } from './bets/bets.component';
 import { EventsComponent } from './events/events.component';
 import { MarketsComponent } from './markets/markets.component';
+import { ResultsComponent } from './results/results.component';
 
 const routes: Routes = [
     {
@@ -13,7 +14,8 @@ const routes: Routes = [
             { path: '', redirectTo: 'bets', pathMatch: 'prefix' },
             { path: 'bets', component: BetsComponent},
             { path: 'events', component: EventsComponent},
-            { path: 'markets', component: MarketsComponent}
+            { path: 'markets', component: MarketsComponent},
+            { path: 'results', component: ResultsComponent}
         ]
     }
 ];

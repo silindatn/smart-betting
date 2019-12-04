@@ -7,6 +7,8 @@ import { MarketsComponent } from './markets/markets.component';
 import { BetsComponent } from './bets/bets.component';
 import { MaterialModule } from '../shared/modules/material.module';
 import { LayoutRoutingModule } from './layout-routing.module';
+
+import { ChartsModule as Ng2Charts } from 'ng2-charts';
 import { ResultsComponent } from './results/results.component';
 
 @NgModule({
@@ -21,6 +23,7 @@ import { ResultsComponent } from './results/results.component';
     CommonModule,
     LayoutRoutingModule,
     MaterialModule,
+    Ng2Charts,
     NgxLoadingModule.forRoot({
       animationType: ngxLoadingAnimationTypes.wanderingCubes,
       backdropBackgroundColour: 'rgba(0,0,0,0.1)',

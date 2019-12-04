@@ -9,7 +9,8 @@ export class LayoutComponent implements OnInit {
   fillerNav = [
     { name: 'Events', icon: '', url: '/events'},
     { name: 'Markets', icon: '', url: '/markets'},
-    { name: 'Bets', icon: '', url: '/bets'}
+    { name: 'Bets', icon: '', url: '/bets'},
+    { name: 'Results', icon: '', url: '/results'}
   ];
   constructor() { }
 

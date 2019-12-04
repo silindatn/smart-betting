@@ -71,4 +71,8 @@ export class ApiService {
   getBets() {
     return this.http.get('bets');
   }
+
+  getReport() {
+    return this.http.get('bets/report');
+  }
 }

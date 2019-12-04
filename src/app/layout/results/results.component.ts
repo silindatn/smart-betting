@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/shared/services/api.service';
 
 @Component({
   selector: 'app-results',
@@ -25,9 +26,19 @@ export class ResultsComponent implements OnInit {
       // console.log(e);
   }
 
-  constructor() {}
+  constructor(private apiServ: ApiService) {}
 
   ngOnInit() {
       this.pieChartType = 'pie';
+      this.getReport();
+  }
+
+  getReport() {
+    const vm = this;
+    vm.apiServ.getReport().subscribe((res) => {
+      console.log('...........................', res);
+    }, (error) => {
+      console.log('---------------------------', error);
+    });
   }
 }

@@ -7,13 +7,15 @@ import { MarketsComponent } from './markets/markets.component';
 import { BetsComponent } from './bets/bets.component';
 import { MaterialModule } from '../shared/modules/material.module';
 import { LayoutRoutingModule } from './layout-routing.module';
+import { ResultsComponent } from './results/results.component';
 
 @NgModule({
   declarations: [
     LayoutComponent,
     EventsComponent,
     MarketsComponent,
-    BetsComponent
+    BetsComponent,
+    ResultsComponent
   ],
   imports: [
     CommonModule,

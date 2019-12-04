@@ -1,0 +1,16 @@
+-------------------- Auto-Git Log --------------------
+		Wed Dec 04 2019 20:53:07 GMT+0200 (South Africa Standard Time)
+------------------------------------------------------
+
+Modified files:
+* src/app/components/dialog/market-outcome/market-outcome.component.html
+
+
+Created files:
+* .autogit/logs/log-4-11-2019-20-23-1.txt
+
+
+Deleted files:
+
+
+Renamed files:

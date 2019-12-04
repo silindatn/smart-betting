@@ -3,7 +3,7 @@
     <mat-form-field>
         <mat-label>Select an Outcome</mat-label>
         <mat-select [(value)]="market.actualOutcome">
-            <mat-option *ngFor="let outcome of market.posibleOutcomes" [value]="outcome"> {{ outcome.name }}({{outcome.probability}}) </mat-option>
+            <mat-option *ngFor="let outcome of market.posibleOutcome" [value]="outcome"> {{ outcome.name }}({{outcome.probability}}) </mat-option>
         </mat-select>
     </mat-form-field>
 </mat-dialog-content>

@@ -15,7 +15,7 @@ import { BetComponent } from 'src/app/components/dialog/bet/bet.component';
 })
 export class BetsComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'Event Name', 'Market Name', 'OutCome', 'Win Prob.', 'menu'];
+  displayedColumns: string[] = ['id', 'Event Name', 'Market Name', 'OutCome', 'Win Prob.', 'Amount', 'menu'];
   dataSource = new MatTableDataSource<IBet>([]);
   loading = false;
 

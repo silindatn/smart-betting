@@ -73,6 +73,6 @@ export class ApiService {
   }
 
   getReport() {
-    return this.http.get('bets/report');
+    return this.http.get('bets/chart-report');
   }
 }

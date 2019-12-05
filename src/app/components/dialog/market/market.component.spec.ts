@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MarketComponent } from './market.component';
+import { ComponentsModule } from '../../components.module';
 
 describe('MarketComponent', () => {
   let component: MarketComponent;
@@ -8,6 +9,7 @@ describe('MarketComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [ ComponentsModule],
       declarations: [ MarketComponent ]
     })
     .compileComponents();

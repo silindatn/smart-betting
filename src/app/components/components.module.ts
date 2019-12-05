@@ -1,4 +1,4 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EventComponent } from './dialog/event/event.component';
 import { BetComponent } from './dialog/bet/bet.component';
@@ -34,6 +34,6 @@ import { MarketOutcomeComponent } from './dialog/market-outcome/market-outcome.c
       tertiaryColour: '#00001a'
   }),
   ],
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA ]
 })
 export class ComponentsModule { }

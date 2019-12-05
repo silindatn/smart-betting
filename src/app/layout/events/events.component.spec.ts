@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EventsComponent } from './events.component';
+import { ComponentsModule } from 'src/app/components/components.module';
+import { LayoutModule } from '@angular/cdk/layout';
 
 describe('EventsComponent', () => {
   let component: EventsComponent;
@@ -8,6 +10,7 @@ describe('EventsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [ ComponentsModule, LayoutModule],
       declarations: [ EventsComponent ]
     })
     .compileComponents();

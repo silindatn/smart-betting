@@ -1,0 +1,15 @@
+-------------------- Auto-Git Log --------------------
+		Thu Dec 05 2019 06:24:51 GMT+0200 (South Africa Standard Time)
+------------------------------------------------------
+
+Modified files:
+
+
+Created files:
+* .autogit/logs/log-5-11-2019-5-54-47.txt
+
+
+Deleted files:
+
+
+Renamed files:

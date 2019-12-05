@@ -59,15 +59,23 @@ export class MarketsComponent implements OnInit {
   }
   getMarkets() {
     const vm = this;
+    vm.loading = true;
     vm.apiServ.getMarkets().subscribe((response: any) => {
       vm.dataSource = response.data;
+      vm.loading = false;
+    }, error => {
+      vm.loading = false;
     });
   }
 
   getEvents() {
     const vm = this;
+    vm.loading = true;
     vm.apiServ.getEvents().subscribe((response: any) => {
       vm.events = response.data;
+      vm.loading = false;
+    }, error => {
+      vm.loading = false;
     });
   }
 

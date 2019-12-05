@@ -1,0 +1,19 @@
+-------------------- Auto-Git Log --------------------
+		Thu Dec 05 2019 21:39:32 GMT+0200 (South Africa Standard Time)
+------------------------------------------------------
+
+Modified files:
+* src/app/layout/results/results.component.html
+* src/app/layout/results/results.component.scss
+* src/app/layout/results/results.component.ts
+* src/app/shared/interfaces/bet.interface.ts
+
+
+Created files:
+* .autogit/logs/log-5-11-2019-21-9-26.txt
+
+
+Deleted files:
+
+
+Renamed files:

@@ -25,12 +25,12 @@ import { ResultsComponent } from './results/results.component';
     MaterialModule,
     Ng2Charts,
     NgxLoadingModule.forRoot({
-      animationType: ngxLoadingAnimationTypes.wanderingCubes,
+      animationType: ngxLoadingAnimationTypes.doubleBounce,
       backdropBackgroundColour: 'rgba(0,0,0,0.1)',
       backdropBorderRadius: '4px',
-      primaryColour: '#ffffff',
-      secondaryColour: '#ffffff',
-      tertiaryColour: '#ffffff'
+      primaryColour: '#0000b3',
+      secondaryColour: '#000066',
+      tertiaryColour: '#00001a'
   }),
   ]
 })

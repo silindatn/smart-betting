@@ -55,11 +55,7 @@ export class MarketComponent implements OnInit {
     this.market.posibleOutcome.push({name: 'outcome ' + this.market.posibleOutcome.length, probability: 1});
   }
 
-  remove(outcome: IOutcome): void {
-    const index = this.market.posibleOutcome.findIndex(m => {
-      return m.name === outcome.name;
-    });
-
+  remove(index): void {
     if (index >= 0) {
       this.market.posibleOutcome.splice(index, 1);
     }

@@ -11,7 +11,7 @@
     </mat-form-field>
     <div class="example-chip-list">
         <button mat-raised-button color="primary" (click)="newOutcome()">Add Outcome</button>
-        <div class="row" *ngFor="let outcome of market.posibleOutcome">
+        <div class="row" *ngFor="let outcome of market.posibleOutcome; let i = index">
             <div class="col-md-4">
                 <mat-form-field>
                     <input matInput type="text" placeholder="Name" [(ngModel)]="outcome.name">
@@ -19,7 +19,7 @@
             </div>
             <div class="col-md-4">
                 <mat-form-field>
-                    <input matInput type="text" placeholder="Probability" [(ngModel)]="outcome.probability">
+                    <input matInput type="text" placeholder="Probability" min="0" max="1" [(ngModel)]="outcome.probability" (input)="onSearchChange($event.target.value, i)">
                 </mat-form-field>
             </div>
             <div class="col-md-4">

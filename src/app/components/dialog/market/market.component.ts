@@ -68,6 +68,14 @@ export class MarketComponent implements OnInit {
   onNoClick(): void {
     this.dialogRef.close();
   }
+  onSearchChange(value, index) {
+    console.log('......', value);
+    if ( value >= 0 && value <= 1) {
+      this.market.posibleOutcome[index].probability = value;
+    } else {
+      this.market.posibleOutcome[index].probability = 0;
+    }
+  }
 
   onSave() {
     this.loading = true;

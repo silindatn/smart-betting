@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 
 import { ApiService } from './api.service';
-import {HttpTestingController} from '@angular/common/http/testing';
+import {HttpTestingController, HttpClientTestingModule} from '@angular/common/http/testing';
 
 import { IEvent } from '../interfaces/event.interface';
 import { AppModule } from 'src/app/app.module';
@@ -13,7 +13,8 @@ describe('ApiService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [ AppModule ]
+      imports: [ AppModule, HttpClientTestingModule ],
+      providers: []
     });
 
     service = TestBed.get(ApiService);

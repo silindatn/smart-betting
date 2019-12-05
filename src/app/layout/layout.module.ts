@@ -10,6 +10,8 @@ import { LayoutRoutingModule } from './layout-routing.module';
 
 import { ChartsModule as Ng2Charts } from 'ng2-charts';
 import { ResultsComponent } from './results/results.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,7 @@ import { ResultsComponent } from './results/results.component';
     CommonModule,
     LayoutRoutingModule,
     MaterialModule,
+    HttpClientModule,
     Ng2Charts,
     NgxLoadingModule.forRoot({
       animationType: ngxLoadingAnimationTypes.doubleBounce,
@@ -32,6 +35,10 @@ import { ResultsComponent } from './results/results.component';
       secondaryColour: '#000066',
       tertiaryColour: '#00001a'
   }),
-  ]
+  ],
+  providers: [
+    { provide: MAT_DIALOG_DATA, useValue: {} },
+    { provide: MatDialogRef, useValue: {} }
+  ],
 })
 export class LayoutModule { }

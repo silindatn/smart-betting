@@ -9,8 +9,7 @@ describe('BetComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ ComponentsModule],
-      declarations: [ BetComponent ]
+      imports: [ ComponentsModule]
     })
     .compileComponents();
   }));

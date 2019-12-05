@@ -1,0 +1,30 @@
+-------------------- Auto-Git Log --------------------
+		Thu Dec 05 2019 22:39:44 GMT+0200 (South Africa Standard Time)
+------------------------------------------------------
+
+Modified files:
+* README.md
+* package-lock.json
+* package.json
+* src/app/components/components.module.ts
+* src/app/components/dialog/bet/bet.component.spec.ts
+* src/app/components/dialog/event/event.component.spec.ts
+* src/app/components/dialog/market-outcome/market-outcome.component.spec.ts
+* src/app/components/dialog/market/market.component.spec.ts
+* src/app/layout/bets/bets.component.spec.ts
+* src/app/layout/events/events.component.spec.ts
+* src/app/layout/layout.component.spec.ts
+* src/app/layout/markets/markets.component.spec.ts
+* src/app/layout/results/results.component.spec.ts
+* src/app/shared/services/api.service.spec.ts
+* src/app/shared/services/http-helper.service.spec.ts
+
+
+Created files:
+* .autogit/logs/log-5-11-2019-22-9-38.txt
+
+
+Deleted files:
+
+
+Renamed files:

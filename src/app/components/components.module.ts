@@ -6,6 +6,8 @@ import { MarketComponent } from './dialog/market/market.component';
 import { MaterialModule } from '../shared/modules/material.module';
 import { NgxLoadingModule, ngxLoadingAnimationTypes } from 'ngx-loading';
 import { MarketOutcomeComponent } from './dialog/market-outcome/market-outcome.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 
 
 
@@ -25,6 +27,7 @@ import { MarketOutcomeComponent } from './dialog/market-outcome/market-outcome.c
   imports: [
     CommonModule,
     MaterialModule,
+    HttpClientModule,
     NgxLoadingModule.forRoot({
       animationType: ngxLoadingAnimationTypes.doubleBounce,
       backdropBackgroundColour: 'rgba(0,0,0,0.1)',
@@ -33,6 +36,10 @@ import { MarketOutcomeComponent } from './dialog/market-outcome/market-outcome.c
       secondaryColour: '#000066',
       tertiaryColour: '#00001a'
   }),
+  ],
+  providers: [
+    { provide: MAT_DIALOG_DATA, useValue: {} },
+    { provide: MatDialogRef, useValue: {} }
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA ]
 })

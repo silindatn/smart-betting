@@ -10,8 +10,7 @@ describe('ResultsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ ComponentsModule, LayoutModule],
-      declarations: [ ResultsComponent ]
+      imports: [ ComponentsModule, LayoutModule]
     })
     .compileComponents();
   }));

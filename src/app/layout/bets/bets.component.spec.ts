@@ -10,8 +10,7 @@ describe('BetsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ ComponentsModule, LayoutModule],
-      declarations: [ BetsComponent ]
+      imports: [ ComponentsModule, LayoutModule]
     })
     .compileComponents();
   }));

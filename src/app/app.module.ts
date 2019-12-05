@@ -11,7 +11,8 @@ import { OrderByPipe } from './utils/order-by.pipe';
 import { AuthService } from './services/auth.service';
 import { DataService } from './services/data.service';
 import { ComponentsModule } from './components/components.module';
-import { MAT_DIALOG_DATA } from '@angular/material';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
+import { ApiService } from './shared/services/api.service';
 
 @NgModule({
   declarations: [
@@ -30,8 +31,10 @@ import { MAT_DIALOG_DATA } from '@angular/material';
   providers: [
     AuthGuardService,
     AuthService,
+    ApiService,
     DataService,
-    { provide: MAT_DIALOG_DATA, useValue: {} }
+    { provide: MAT_DIALOG_DATA, useValue: {} },
+    { provide: MatDialogRef, useValue: {} }
   ],
   bootstrap: [AppComponent]
 })

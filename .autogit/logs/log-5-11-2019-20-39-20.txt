@@ -1,0 +1,18 @@
+-------------------- Auto-Git Log --------------------
+		Thu Dec 05 2019 20:39:20 GMT+0200 (South Africa Standard Time)
+------------------------------------------------------
+
+Modified files:
+* src/app/components/dialog/market/market.component.html
+* src/app/components/dialog/market/market.component.ts
+* src/app/layout/results/results.component.html
+
+
+Created files:
+* .autogit/logs/log-5-11-2019-20-9-15.txt
+
+
+Deleted files:
+
+
+Renamed files:

@@ -60,26 +60,7 @@ describe('EventsComponent', () => {
         method: 'GET',
         href: 'http://localhost:9000/api/events'
       },
-      data: [
-        {
-          id: '5de539a351d85822994b6f25',
-          name: 'epl ht',
-          description: 'manu vs mancity',
-          startDate: '2019-12-02T16:19:00.000Z',
-          endDate: '2019-12-02T16:19:00.000Z',
-          createdAt: '2019-12-02T16:19:47.694Z',
-          updatedAt: '2019-12-02T17:00:17.279Z'
-        },
-        {
-          id: '5de53d5d51d85822994b6f33',
-          name: 'epl match',
-          description: 'manu vs mancity',
-          startDate: '2019-12-02T16:12:00.000Z',
-          endDate: '2019-12-02T16:12:00.000Z',
-          createdAt: '2019-12-02T16:35:41.292Z',
-          updatedAt: '2019-12-02T16:35:41.292Z'
-        }
-      ]
+      data: []
     };
     const request = httpMock.expectOne( `http://localhost:9000/api/events`);
     expect(request.request.method).toBe('GET');

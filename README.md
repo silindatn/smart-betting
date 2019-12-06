@@ -4,14 +4,14 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## prerequisite
     Nodejs
     npm
-    @angular/cli
+    @angular/cli globally
     smart-betting-server must be running
 
 ## Development server
-Run `git clone https://github.com/silindatn/smart-betting.git`
-Run `cd smart-betting`
-Run `npm install` to install node modules
-Run `npm start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+    Run `git clone https://github.com/silindatn/smart-betting.git`
+    Run `cd smart-betting`
+    Run `npm install` to install node modules
+    Run `npm start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## if npm install gives permission errors
 Run `sudo npm install`

@@ -24,7 +24,6 @@ export class MarketOutcomeComponent implements OnInit {
         } else {
           this.title = 'Add Market Outcome';
         }
-        console.log('....vet....', this.data);
     }
 
   ngOnInit() {

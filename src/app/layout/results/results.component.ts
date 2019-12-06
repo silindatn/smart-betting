@@ -70,7 +70,6 @@ export class ResultsComponent implements OnInit {
     vm.loading = true;
     vm.apiServ.getEvents().subscribe(
       (response: any) => {
-        console.log('......', response);
         vm.loading = false;
         vm.events = response.data;
       },
@@ -84,7 +83,6 @@ export class ResultsComponent implements OnInit {
     vm.loading = true;
     vm.apiServ.getMarkets().subscribe(
       (response: any) => {
-        console.log('......', response);
         vm.loading = false;
         vm.markets = response.data;
       },

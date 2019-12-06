@@ -29,7 +29,6 @@ export class EventComponent implements OnInit {
     public dialogRef: MatDialogRef<EventComponent>,
     private apiServ: ApiService,
     @Inject(MAT_DIALOG_DATA) public data: IEvent) {
-      console.log('ev ....', this.data);
       if (this.data && this.data.name) {
         this.event = this.data;
         this.isEdit = true;
@@ -62,7 +61,6 @@ export class EventComponent implements OnInit {
       new Date(moment(this.event.startDate).format('YYYY/MM/DD') + ' ' + this.startTime.hour + ':' + this.startTime.minute + ':00');
     this.event.endDate =
       new Date(moment(this.event.endDate).format('YYYY/MM/DD') + ' ' + this.endTime.hour + ':' + this.endTime.minute + ':00');
-    console.log('event ', this.event);
     const vm = this;
     if (vm.isEdit) {
       vm.apiServ.updateEvent(this.event).subscribe((res: any) => {

@@ -67,7 +67,6 @@ export class BetsComponent implements OnInit {
     const vm = this;
     vm.loading = true;
     vm.apiServ.getEvents().subscribe((response: any) => {
-      console.log('......', response);
       vm.loading = false;
       vm.events = response.data;
     }, (error) => {
@@ -78,7 +77,6 @@ export class BetsComponent implements OnInit {
     const vm = this;
     vm.loading = true;
     vm.apiServ.getMarkets().subscribe((response: any) => {
-      console.log('......', response);
       vm.loading = false;
       vm.markets = response.data;
     }, (error) => {
@@ -89,7 +87,6 @@ export class BetsComponent implements OnInit {
     const vm = this;
     vm.loading = true;
     vm.apiServ.getBets().subscribe((response: any) => {
-      console.log('......', response);
       vm.loading = false;
       vm.dataSource.data = response.data;
     }, (error) => {

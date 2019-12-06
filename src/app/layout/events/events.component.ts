@@ -50,7 +50,6 @@ export class EventsComponent implements OnInit {
     const vm = this;
     vm.loading = true;
     vm.apiServ.getEvents().subscribe((response: any) => {
-      console.log('......', response);
       vm.loading = false;
       vm.dataSource.data = response.data;
     }, (error) => {

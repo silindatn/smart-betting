@@ -7,10 +7,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgxLoadingModule, ngxLoadingAnimationTypes } from 'ngx-loading';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
+import { HttpTestingController, HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('BetComponent', () => {
   let component: BetComponent;
   let fixture: ComponentFixture<BetComponent>;
+  let httpMock: HttpTestingController;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -19,6 +21,7 @@ describe('BetComponent', () => {
     CommonModule,
     MaterialModule,
     HttpClientModule,
+    HttpClientTestingModule,
     NgxLoadingModule.forRoot({
       animationType: ngxLoadingAnimationTypes.doubleBounce,
       backdropBackgroundColour: 'rgba(0,0,0,0.1)',
@@ -41,10 +44,24 @@ describe('BetComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(BetComponent);
     component = fixture.componentInstance;
+    httpMock = TestBed.get(HttpTestingController);
     fixture.detectChanges();
   });
 
-  xit('should create', () => {
+  it('should create', () => {
+    const dummyResponse = {
+      response: {
+        info: 'events list',
+        version: 1,
+        method: 'GET',
+        href: 'http://localhost:9000/api/events'
+      },
+      data: []
+    };
+
+    const request = httpMock.expectOne( `http://localhost:9000/api/events`);
+    expect(request.request.method).toBe('GET');
+    request.flush(dummyResponse);
     expect(component).toBeTruthy();
   });
 });

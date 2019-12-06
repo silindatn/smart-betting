@@ -6,10 +6,10 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AuthGuardService } from './services/auth-guard.service';
+import { AuthGuardService } from './shared/services/auth-guard.service';
 import { OrderByPipe } from './utils/order-by.pipe';
-import { AuthService } from './services/auth.service';
-import { DataService } from './services/data.service';
+import { AuthService } from './shared/services/auth.service';
+import { DataService } from './shared/services/data.service';
 import { ComponentsModule } from './components/components.module';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import { ApiService } from './shared/services/api.service';

@@ -3,10 +3,10 @@ import { HttpClient } from '@angular/common/http';
 
 import { AuthService } from './auth.service';
 
-import { Bet } from '../models/bet';
-import { Leader } from '../models/leader';
+import { Bet } from '../../models/bet';
+import { Leader } from '../../models/leader';
 
-import { environment } from '../../environments/environment';
+import { environment } from '../../../environments/environment';
 
 @Injectable()
 export class DataService {

@@ -1,8 +1,13 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BetsComponent } from './bets.component';
-import { LayoutModule } from '../layout.module';
-import { ComponentsModule } from 'src/app/components/components.module';
+import { CommonModule } from '@angular/common';
+import { MaterialModule } from 'src/app/shared/modules/material.module';
+import { HttpClientModule } from '@angular/common/http';
+import { NgxLoadingModule, ngxLoadingAnimationTypes } from 'ngx-loading';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
+import { ChartsModule as Ng2Charts } from 'ng2-charts';
+import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('BetsComponent', () => {
   let component: BetsComponent;
@@ -10,7 +15,26 @@ describe('BetsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ ComponentsModule, LayoutModule]
+      imports: [
+        CommonModule,
+        MaterialModule,
+        HttpClientModule,
+        Ng2Charts,
+        NgxLoadingModule.forRoot({
+          animationType: ngxLoadingAnimationTypes.doubleBounce,
+          backdropBackgroundColour: 'rgba(0,0,0,0.1)',
+          backdropBorderRadius: '4px',
+          primaryColour: '#0000b3',
+          secondaryColour: '#000066',
+          tertiaryColour: '#00001a'
+      }),
+      ],
+      declarations: [ BetsComponent ],
+      providers: [
+        { provide: MAT_DIALOG_DATA, useValue: {} },
+        { provide: MatDialogRef, useValue: {} }
+      ],
+      schemas: [ CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA ]
     })
     .compileComponents();
   }));

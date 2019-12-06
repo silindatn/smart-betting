@@ -19,7 +19,7 @@ export class MarketOutcomeComponent implements OnInit {
     private apiServ: ApiService,
     @Inject(MAT_DIALOG_DATA) public data: IMarket) {
         this.market = this.data;
-        if (this.market.actualOutcome.name) {
+        if (this.market && this.market.actualOutcome.name) {
           this.title = 'Edit Market Outcome';
         } else {
           this.title = 'Add Market Outcome';

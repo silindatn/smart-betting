@@ -54,7 +54,7 @@ describe('ApiService', () => {
       ]
     };
     service.getEvents().subscribe((res: any) => {
-        expect(res.data).toBe(2);
+        expect(res.data.length).toBe(2);
         expect(res.data).toEqual(dummyResponse.data);
     });
     const request = httpMock.expectOne( `http://localhost:9000/api/events`);

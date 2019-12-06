@@ -1,0 +1,30 @@
+-------------------- Auto-Git Log --------------------
+		Fri Dec 06 2019 08:00:10 GMT+0200 (South Africa Standard Time)
+------------------------------------------------------
+
+Modified files:
+* src/app/app-routing.module.ts
+* src/app/app.module.ts
+* src/app/components/dialog/bet/bet.component.spec.ts
+* src/app/components/dialog/event/event.component.spec.ts
+* src/app/components/dialog/market-outcome/market-outcome.component.html
+* src/app/components/dialog/market-outcome/market-outcome.component.spec.ts
+* src/app/components/dialog/market-outcome/market-outcome.component.ts
+* src/app/components/dialog/market/market.component.spec.ts
+* src/app/layout/bets/bets.component.spec.ts
+* src/app/layout/events/events.component.spec.ts
+* src/app/layout/markets/markets.component.spec.ts
+* src/app/layout/results/results.component.spec.ts
+
+
+Created files:
+* .autogit/logs/log-6-11-2019-7-30-0.txt
+
+
+Deleted files:
+
+
+Renamed files:
+* [object Object]
+* [object Object]
+* [object Object]
